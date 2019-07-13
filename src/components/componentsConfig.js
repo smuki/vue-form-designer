@@ -264,15 +264,6 @@ export const advanceComponents = [
     }
   },
   {
-    type: 'editor',
-    name: '编辑器',
-    icon: 'icon-fuwenbenkuang',
-    options: {
-      defaultValue: '',
-      width: ''
-    }
-  },
-  {
     type: 'cascader',
     name: '级联选择器',
     icon: 'icon-jilianxuanze',
