@@ -64,7 +64,7 @@
             <el-button v-if="generateJson" type="text" size="medium" icon="el-icon-tickets" @click="handleGenerateJson">生成JSON</el-button>
             <el-button v-if="generateCode" type="text" size="medium" icon="el-icon-document" @click="handleGenerateCode">生成代码</el-button>
           </el-header>
-          <el-main :class="{'widget-empty': widgetForm.list.length == 0}">
+          <el-main :class="{'widget-empty': widgetForm.Components.length == 0}">
             
             <widget-form v-if="!resetJson"  ref="widgetForm" :data="widgetForm" :select.sync="widgetFormSelect"></widget-form>
           </el-main>
@@ -200,7 +200,7 @@ export default {
       advanceComponents,
       resetJson: false,
       widgetForm: {
-        list: [],
+        Components: [],
         config: {
           labelWidth: 100,
           labelPosition: 'right',
@@ -242,7 +242,7 @@ export default {
       jsonCopyValue: '',
       jsonClipboard: null,
       jsonEg: `{
-  "list": [
+  "Components": [
     {
       "type": "input",
       "name": "单行文本",
@@ -327,11 +327,23 @@ export default {
     handleGenerateJson () {
       this.jsonVisible = true
       this.jsonTemplate = this.widgetForm
+      console.log("-----------------------------")
+      console.log("-----------------------------")
+      console.log("-----------------------------")
+      console.log("-----------------------------")
+      console.log("-----------------------------")
       console.log(JSON.stringify(this.widgetForm))
+      console.log("-----------------------------")
+      console.log("-----------------------------")
+      console.log("-----------------------------")
+      console.log("-----------------------------")
+      console.log("-----------------------------")
+      console.log("-----------------------------")
+
       this.$nextTick(() => {
 
-        const editor = ace.edit('jsoneditor')
-        editor.session.setMode("ace/mode/json")
+        //const editor = ace.edit('jsoneditor')
+        //editor.session.setMode("ace/mode/json")
 
         if (!this.jsonClipboard) {
           this.jsonClipboard = new Clipboard('.json-btn')
@@ -346,8 +358,8 @@ export default {
       this.codeVisible = true
       this.htmlTemplate = generateCode(JSON.stringify(this.widgetForm))
       this.$nextTick(() => {
-        const editor = ace.edit('codeeditor')
-        editor.session.setMode("ace/mode/html")
+        //const editor = ace.edit('codeeditor')
+        //editor.session.setMode("ace/mode/html")
       })
     },
     handleUpload () {
@@ -368,7 +380,7 @@ export default {
     },
     handleClear () {
       this.widgetForm = {
-        list: [],
+        Components: [],
         config: {
           labelWidth: 100,
           labelPosition: 'right',

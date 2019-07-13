@@ -1,17 +1,17 @@
 <template>
   <div class="widget-form-container">
-    <div v-if="data.list.length == 0" class="form-empty">从左侧拖拽来添加字段</div>
+    <div v-if="data.Components.length == 0" class="form-empty">从左侧拖拽来添加字段</div>
     <el-form :size="data.config.size" label-suffix=":" :label-position="data.config.labelPosition" :label-width="data.config.labelWidth + 'px'">
       
       <draggable class="" 
-        v-model="data.list" 
+        v-model="data.Components" 
         v-bind="{group:'people', ghostClass: 'ghost',animation: 200, handle: '.drag-widget'}"
         @end="handleMoveEnd"
         @add="handleWidgetAdd"
       >
 
         <transition-group name="fade" tag="div" class="widget-form-list">
-          <template v-for="(element, index) in data.list">
+          <template v-for="(element, index) in data.Components">
             <template v-if="element.type == 'grid'">
                 <el-row class="widget-col widget-view" v-if="element && element.key" :key="element.key" 
                   type="flex"
@@ -93,7 +93,7 @@ export default {
     },
     handleSelectWidget (index) {
       console.log(index, '#####')
-      this.selectWidget = this.data.list[index]
+      this.selectWidget = this.data.Components[index]
     },
     handleWidgetAdd (evt) {
       console.log('add', evt)
@@ -104,38 +104,38 @@ export default {
       
       //为拖拽到容器的元素添加唯一 key
       const key = Date.parse(new Date()) + '_' + Math.ceil(Math.random() * 99999)
-      this.$set(this.data.list, newIndex, {
-        ...this.data.list[newIndex],
+      this.$set(this.data.Components, newIndex, {
+        ...this.data.Components[newIndex],
         options: {
-          ...this.data.list[newIndex].options,
+          ...this.data.Components[newIndex].options,
           remoteFunc: 'func_' + key
         },
         key,
         // 绑定键值
-        model: this.data.list[newIndex].type + '_' + key,
+        model: this.data.Components[newIndex].type + '_' + key,
         rules: []
       })
 
-      if (this.data.list[newIndex].type === 'radio' || this.data.list[newIndex].type === 'checkbox' || this.data.list[newIndex].type === 'select') {
-        this.$set(this.data.list, newIndex, {
-          ...this.data.list[newIndex],
+      if (this.data.Components[newIndex].type === 'radio' || this.data.Components[newIndex].type === 'checkbox' || this.data.Components[newIndex].type === 'select') {
+        this.$set(this.data.Components, newIndex, {
+          ...this.data.Components[newIndex],
           options: {
-            ...this.data.list[newIndex].options,
-            options: this.data.list[newIndex].options.options.map(item => ({
+            ...this.data.Components[newIndex].options,
+            options: this.data.Components[newIndex].options.options.map(item => ({
               ...item
             }))
           }
         })
       }
 
-      if (this.data.list[newIndex].type === 'grid') {
-        this.$set(this.data.list, newIndex, {
-          ...this.data.list[newIndex],
-          columns: this.data.list[newIndex].columns.map(item => ({...item}))
+      if (this.data.Components[newIndex].type === 'grid') {
+        this.$set(this.data.Components, newIndex, {
+          ...this.data.Components[newIndex],
+          columns: this.data.Components[newIndex].columns.map(item => ({...item}))
         })
       }
 
-      this.selectWidget = this.data.list[newIndex]
+      this.selectWidget = this.data.Components[newIndex]
     },
     handleWidgetColAdd ($event, row, colIndex) {
       console.log('coladd', $event, row, colIndex)
@@ -147,9 +147,9 @@ export default {
       if (item.className.indexOf('data-grid') >= 0) {
 
         // 如果是列表中拖拽的元素需要还原到原来位置
-        item.tagName === 'DIV' && this.data.list.splice(oldIndex, 0, row.columns[colIndex].list[newIndex])
+        item.tagName === 'DIV' && this.data.Components.splice(oldIndex, 0, row.columns[colIndex].Components[newIndex])
 
-        row.columns[colIndex].list.splice(newIndex, 1)
+        row.columns[colIndex].Components.splice(newIndex, 1)
 
         return false
       }
@@ -158,23 +158,23 @@ export default {
 
       const key = Date.parse(new Date()) + '_' + Math.ceil(Math.random() * 99999)
 
-      this.$set(row.columns[colIndex].list, newIndex, {
-        ...row.columns[colIndex].list[newIndex],
+      this.$set(row.columns[colIndex].Components, newIndex, {
+        ...row.columns[colIndex].Components[newIndex],
         options: {
-          ...row.columns[colIndex].list[newIndex].options,
+          ...row.columns[colIndex].Components[newIndex].options,
           remoteFunc: 'func_' + key
         },
         key,
         // 绑定键值
-        model: row.columns[colIndex].list[newIndex].type + '_' + key,
+        model: row.columns[colIndex].Components[newIndex].type + '_' + key,
         rules: []
       })
 
-      if (row.columns[colIndex].list[newIndex].type === 'radio' || row.columns[colIndex].list[newIndex].type === 'checkbox' || row.columns[colIndex].list[newIndex].type === 'select') {
-        this.$set(row.columns[colIndex].list, newIndex, {
-          ...row.columns[colIndex].list[newIndex],
+      if (row.columns[colIndex].Components[newIndex].type === 'radio' || row.columns[colIndex].Components[newIndex].type === 'checkbox' || row.columns[colIndex].Components[newIndex].type === 'select') {
+        this.$set(row.columns[colIndex].Components, newIndex, {
+          ...row.columns[colIndex].Components[newIndex],
           options: {
-            ...row.columns[colIndex].list[newIndex].options,
+            ...row.columns[colIndex].Components[newIndex].options,
             options: row.columns[colIndex].list[newIndex].options.options.map(item => ({
               ...item
             }))
@@ -185,18 +185,18 @@ export default {
       this.selectWidget = row.columns[colIndex].list[newIndex]
     },
     handleWidgetDelete (index) {
-      if (this.data.list.length - 1 === index) {
+      if (this.data.Components.length - 1 === index) {
         if (index === 0) {
           this.selectWidget = {}
         } else {
-          this.selectWidget = this.data.list[index - 1]
+          this.selectWidget = this.data.Components[index - 1]
         }
       } else {
-        this.selectWidget = this.data.list[index + 1]
+        this.selectWidget = this.data.Components[index + 1]
       }
 
       this.$nextTick(() => {
-        this.data.list.splice(index, 1)
+        this.data.Components.splice(index, 1)
       })
     },
   },
