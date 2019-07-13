@@ -172,16 +172,6 @@
           </el-cascader>
         </template>
 
-        <template v-if="element.type == 'editor'">
-          <fm-editor
-            v-model="element.options.defaultValue"
-            :width="element.options.width"
-            :height="element.options.height"
-          >
-
-          </fm-editor>
-        </template>
-
         <template v-if="element.type=='blank'">
           <div style="height: 50px;color: #999;background: #eee;line-height:50px;text-align:center;">自定义区域</div>
         </template>

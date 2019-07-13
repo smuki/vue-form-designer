@@ -176,16 +176,6 @@
       </fm-upload>
     </template>
 
-    <template v-if="widget.type == 'editor'">
-      <fm-editor
-        v-model="dataModel"
-        :width="widget.options.width"
-        :height="widget.options.height"
-      >
-
-      </fm-editor>
-    </template>
-
     <template v-if="widget.type == 'cascader'">
       <el-cascader
         v-model="dataModel"
