@@ -4,7 +4,7 @@
       label-suffix=":"
       :size="data.config.size"
       :model="models" :rules="rules" :label-position="data.config.labelPosition" :label-width="data.config.labelWidth + 'px'">
-      <template v-for="item in data.list">
+      <template v-for="item in data.Components">
 
         <template v-if="item.type == 'grid'">
           <el-row
@@ -59,7 +59,7 @@ export default {
     }
   },
   created () {
-    this.generateModle(this.data.list)
+    this.generateModle(this.data.Components)
   },
   mounted () {
   },
