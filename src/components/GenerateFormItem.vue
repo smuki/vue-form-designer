@@ -203,13 +203,11 @@
 
 <script>
 import FmUpload from './Upload'
-import FmEditor from './Editor/tinymce'
 
 export default {
   props: ['widget', 'models', 'rules', 'remote'],
   components: {
     FmUpload,
-    FmEditor
   },
   data () {
     return {

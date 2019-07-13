@@ -200,12 +200,10 @@
 
 <script>
 import FmUpload from './Upload'
-import FmEditor from './Editor/tinymce'
 export default {
   props: ['element', 'select', 'index', 'data'],
   components: {
     FmUpload,
-    FmEditor
   },
   data () {
     return {
