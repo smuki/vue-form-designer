@@ -204,33 +204,33 @@ export default {
   mounted() {},
   methods: {
     handleSelectWidget(index) {
-      this.selectWidget = this.data.list[index];
+      this.selectWidget = this.data.Components[index];
     },
     handleWidgetDelete(index) {
-      if (this.data.list.length - 1 === index) {
+      if (this.data.Components.length - 1 === index) {
         if (index === 0) {
           this.selectWidget = {};
         } else {
-          this.selectWidget = this.data.list[index - 1];
+          this.selectWidget = this.data.Components[index - 1];
         }
       } else {
-        this.selectWidget = this.data.list[index + 1];
+        this.selectWidget = this.data.Components[index + 1];
       }
 
       this.$nextTick(() => {
-        this.data.list.splice(index, 1);
+        this.data.Components.splice(index, 1);
       });
     },
     handleWidgetClone(index) {
       let cloneData = {
-        ...this.data.list[index],
-        options: { ...this.data.list[index].options },
+        ...this.data.Components[index],
+        options: { ...this.data.Components[index].options },
         key: Date.parse(new Date()) + "_" + Math.ceil(Math.random() * 99999)
       };
 
       if (
-        this.data.list[index].type === "radio" ||
-        this.data.list[index].type === "checkbox"
+        this.data.Components[index].type === "radio" ||
+        this.data.Components[index].type === "checkbox"
       ) {
         cloneData = {
           ...cloneData,
@@ -241,10 +241,10 @@ export default {
         };
       }
 
-      this.data.list.splice(index, 0, cloneData);
+      this.data.Components.splice(index, 0, cloneData);
 
       this.$nextTick(() => {
-        this.selectWidget = this.data.list[index + 1];
+        this.selectWidget = this.data.Components[index + 1];
       });
     }
   },
