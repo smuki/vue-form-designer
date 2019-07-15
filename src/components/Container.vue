@@ -436,9 +436,9 @@ export default {
     },
     handleUploadJson() {
       //try {
-        //this.setJSON(JSON.parse(this.uploadEditor.getValue()));
-       // this.uploadVisible = false;
-     // } catch (e) {
+      //this.setJSON(JSON.parse(this.uploadEditor.getValue()));
+      // this.uploadVisible = false;
+      // } catch (e) {
       //  this.$message.error(e.message);
       //  this.$refs.uploadJson.end();
       //}
