@@ -1,6 +1,6 @@
 <template>
   <div class="widget-form-container">
-    <div v-if="data.Components.length == 0" class="form-empty">从左侧拖拽来添加字段</div>
+    <div v-if="data.Components.length == 0" class="form-empty">从 左 侧 拖 拽 来 添 加 字 段</div>
     <el-form
       :size="data.config.size"
       label-suffix=":"
