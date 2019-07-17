@@ -6,6 +6,7 @@
     :label="element.name"
     @click.native.stop="handleSelectWidget(index)"
   >
+  {{element}}
     <template v-if="element.type == 'input'">
       <el-input
         v-model="element.options.defaultValue"

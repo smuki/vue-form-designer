@@ -1,3 +1,23 @@
+export const vComponents = [
+  {
+    type: 'input',
+    name: '单行文本',
+    field: "project",
+    label: "项目",
+    icon: 'icon-input',
+    options: {
+      width: '100%',
+      defaultValue: '',
+      required: false,
+      editable: true,
+      dataType: 'string',
+      pattern: '',
+      placeholder: '',
+      disabled: false,
+    }
+  },
+]
+
 export const basicComponents = [
   {
     type: 'input',

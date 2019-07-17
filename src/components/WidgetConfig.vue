@@ -19,7 +19,7 @@
       </el-form-item>
 
       <el-form-item
-        label="占位内容"
+        label="提示文字"
         v-if="Object.keys(data.options).indexOf('placeholder')>=0 && (data.type!='time' || data.type!='date')"
       >
         <el-input v-model="data.options.placeholder"></el-input>
@@ -229,19 +229,19 @@
           <el-switch v-model="data.options.timestamp"></el-switch>
         </el-form-item>
         <el-form-item
-          label="占位内容"
+          label="提示文字"
           v-if="(!data.options.isRange && data.type == 'time') || (data.type != 'time' && data.options.type != 'datetimerange' && data.options.type != 'daterange')"
         >
           <el-input v-model="data.options.placeholder"></el-input>
         </el-form-item>
         <el-form-item
-          label="开始时间占位内容"
+          label="开始时间提示文字"
           v-if="(data.options.isRange) || data.options.type=='datetimerange' || data.options.type=='daterange'"
         >
           <el-input v-model="data.options.startPlaceholder"></el-input>
         </el-form-item>
         <el-form-item
-          label="结束时间占位内容"
+          label="结束时间提示文字"
           v-if="data.options.isRange || data.options.type=='datetimerange' || data.options.type=='daterange'"
         >
           <el-input v-model="data.options.endPlaceholder"></el-input>
@@ -363,7 +363,7 @@
 
       <template v-if="data.type != 'grid'">
         <el-form-item label="数据绑定Key">
-          <el-input v-model="data.model"></el-input>
+          <el-input v-model="data.field"></el-input>
         </el-form-item>
         <el-form-item label="操作属性">
           <el-checkbox
