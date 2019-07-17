@@ -357,9 +357,6 @@ export default {
   },
   mounted() {},
   methods: {
-    handleGoGithub() {
-      window.location.href = "https://github.com/GavinZhuLei/vue-form-making";
-    },
     handleConfigSelect(value) {
       this.configTab = value;
     },
