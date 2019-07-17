@@ -1,15 +1,15 @@
 import Vue from 'vue'
-import GenerateForm from './components/GenerateForm.vue'
+import runtimeForm from './components/runtimeForm.vue'
 
 import './styles/cover.scss'
 import './styles/index.scss'
 
-GenerateForm.install = function (Vue) {
-  Vue.component(GenerateForm.name, GenerateForm)
+runtimeForm.install = function (Vue) {
+  Vue.component(runtimeForm.name, runtimeForm)
 }
 
 const components = [
-  GenerateForm
+  runtimeForm
 ]
 
 const install = function (Vue, opts = {}) {
@@ -24,10 +24,10 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export {
   install,
-  GenerateForm
+  runtimeForm
 }
 
 export default {
   install,
-  GenerateForm
+  runtimeForm
 }

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import 'normalize.css/normalize.css'
 
 import MakingForm from './components/Container.vue'
-import GenerateForm from './components/GenerateForm.vue'
+import runtimeForm from './components/RuntimeForm.vue'
 
 import './iconfont/iconfont.css'
 import './styles/cover.scss'
@@ -12,13 +12,13 @@ MakingForm.install = function (Vue) {
   Vue.component(MakingForm.name, MakingForm)
 }
 
-GenerateForm.install = function (Vue) {
-  Vue.component(GenerateForm.name, GenerateForm)
+runtimeForm.install = function (Vue) {
+  Vue.component(runtimeForm.name, runtimeForm)
 }
 
 const components = [
   MakingForm,
-  GenerateForm
+  runtimeForm
 ]
 
 const install = function (Vue, opts = {}) {
@@ -34,11 +34,11 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   MakingForm,
-  GenerateForm
+  runtimeForm
 }
 
 export default {
   install,
   MakingForm,
-  GenerateForm
+  runtimeForm
 }
