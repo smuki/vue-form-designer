@@ -42,7 +42,7 @@ export default function (data) {
 
   const blankList = []
 
-  findRemoteFunc(JSON.parse(data).list, funcList, tokenFuncList, blankList)
+  findRemoteFunc(JSON.parse(data).Components, funcList, tokenFuncList, blankList)
 
   let funcTemplate = ''
 
