@@ -254,8 +254,7 @@ $primary-background-color: #ecf5ff;
       }
 
       &.ghost{
-        background: #F56C6C;
-        border: 2px solid #F56C6C;
+        border: 1px dashed #F56C6C;
         outline-width: 0;
         height: 48px;
         box-sizing: border-box;
@@ -550,8 +549,7 @@ $primary-background-color: #ecf5ff;
       }
 
       &.ghost{
-        background: #F56C6C;
-        border: 2px solid #F56C6C;
+        border: 1px dashed #F56C6C;
         outline-width: 0;
         height: 48px;
         box-sizing: border-box;
@@ -575,8 +573,7 @@ $primary-background-color: #ecf5ff;
     }
 
     .ghost{
-      background: #F56C6C;
-      border: 2px solid #F56C6C;
+      border: 1px dashed #F56C6C;
       outline-width: 0;
       height: 48px;
       box-sizing: border-box;
@@ -588,12 +585,11 @@ $primary-background-color: #ecf5ff;
   }
 
   .ghost{
-    background: #F56C6C;
-    border: 2px solid #F56C6C;
+    border: 1px dashed #F56C6C;
     position: relative;
   
     &::after{
-      background: #F56C6C;
+      //background: #F56C6C;
     }
   }
   
@@ -619,8 +615,8 @@ $primary-background-color: #ecf5ff;
 
   .widget-grid-container{
     &.ghost{
-      background: #F56C6C;
-      border: 2px solid #F56C6C;
+      //background: #F56C6C;
+      border: 1px dashed #F56C6C;
       outline-width: 0;
       height: 40px;
       box-sizing: border-box;
@@ -632,12 +628,12 @@ $primary-background-color: #ecf5ff;
   }
 
   .ghost{
-    background: #F56C6C;
-    border: 2px solid #F56C6C;
+    //background: #F56C6C;
+    border: 1px dashed #F56C6C;
     position: relative;
   
     &::after{
-      background: #F56C6C;
+      //background: #F56C6C;
     }
   }
   
