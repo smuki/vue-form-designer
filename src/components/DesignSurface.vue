@@ -34,14 +34,14 @@
                   :span="col.span ? col.span : 0"
                 >
                   <draggable
-                    v-model="col.list"
+                    v-model="col.Components"
                     :no-transition-on-drag="true"
                     v-bind="{group:'people', ghostClass: 'ghost',animation: 200, handle: '.drag-widget'}"
                     @end="handleMoveEnd"
                     @add="handleWidgetColAdd($event, element, colIndex)"
                   >
                     <transition-group name="fade" tag="div" class="widget-col-list">
-                      <template v-for="(el, i) in col.list">
+                      <template v-for="(el, i) in col.Components">
                         <widget-form-item
                           :key="el.key"
                           v-if="el.key"
@@ -182,10 +182,10 @@ export default {
           this.data.Components.splice(
             oldIndex,
             0,
-            row.columns[colIndex].list[newIndex]
+            row.columns[colIndex].Components[newIndex]
           );
 
-        row.columns[colIndex].list.splice(newIndex, 1);
+        row.columns[colIndex].Components.splice(newIndex, 1);
 
         return false;
       }
@@ -196,28 +196,28 @@ export default {
       const key =
         Date.parse(new Date()) + "_" + Math.ceil(Math.random() * 99999);
 
-      this.$set(row.columns[colIndex].list, newIndex, {
-        ...row.columns[colIndex].list[newIndex],
+      this.$set(row.columns[colIndex].Components, newIndex, {
+        ...row.columns[colIndex].Components[newIndex],
         options: {
-          ...row.columns[colIndex].list[newIndex].options,
+          ...row.columns[colIndex].Components[newIndex].options,
           remoteFunc: "func_" + key
         },
         key,
         // 绑定键值
-        model: row.columns[colIndex].list[newIndex].type + "_" + key,
+        model: row.columns[colIndex].Components[newIndex].type + "_" + key,
         rules: []
       });
 
       if (
-        row.columns[colIndex].list[newIndex].type === "radio" ||
-        row.columns[colIndex].list[newIndex].type === "checkbox" ||
-        row.columns[colIndex].list[newIndex].type === "select"
+        row.columns[colIndex].Components[newIndex].type === "radio" ||
+        row.columns[colIndex].Components[newIndex].type === "checkbox" ||
+        row.columns[colIndex].Components[newIndex].type === "select"
       ) {
-        this.$set(row.columns[colIndex].list, newIndex, {
-          ...row.columns[colIndex].list[newIndex],
+        this.$set(row.columns[colIndex].Components, newIndex, {
+          ...row.columns[colIndex].Components[newIndex],
           options: {
-            ...row.columns[colIndex].list[newIndex].options,
-            options: row.columns[colIndex].list[newIndex].options.options.map(
+            ...row.columns[colIndex].Components[newIndex].options,
+            options: row.columns[colIndex].Components[newIndex].options.options.map(
               item => ({
                 ...item
               })
@@ -226,7 +226,7 @@ export default {
         });
       }
 
-      this.selectWidget = row.columns[colIndex].list[newIndex];
+      this.selectWidget = row.columns[colIndex].Components[newIndex];
     },
     handleWidgetDelete(index) {
       if (this.data.Components.length - 1 === index) {
