@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-form
-      ref="generateForm"
+      ref="runtimeForm"
       label-suffix=":"
       :size="data.config.size"
       :model="models"
@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import GenetateFormItem from "./GenerateFormItem";
+import GenetateFormItem from "./RuntimeFormItem";
 import { loadJs } from "../util/index.js";
 
 export default {
@@ -137,7 +137,7 @@ export default {
     },
     getData() {
       return new Promise((resolve, reject) => {
-        this.$refs.generateForm.validate(valid => {
+        this.$refs.runtimeForm.validate(valid => {
           if (valid) {
             resolve(this.models);
           } else {
@@ -147,7 +147,7 @@ export default {
       });
     },
     reset() {
-      this.$refs.generateForm.resetFields();
+      this.$refs.runtimeForm.resetFields();
     },
     refresh() {}
   },

@@ -85,7 +85,7 @@ export default function (data) {
   </head>
   <body>
     <div id="app">
-      <fm-generate-form :data="jsonData" :remote="remoteFuncs" :value="editData" ref="generateForm">
+      <fm-generate-form :data="jsonData" :remote="remoteFuncs" :value="editData" ref="runtimeForm">
         ${blankTemplate}
       </fm-generate-form>
       <el-button type="primary" @click="handleSubmit">提交</el-button>
@@ -105,7 +105,7 @@ export default function (data) {
         },
         methods: {
           handleSubmit () {
-            this.$refs.generateForm.getData().then(data => {
+            this.$refs.runtimeForm.getData().then(data => {
               // 数据校验成功
               // data 为获取的表单数据
             }).catch(e => {

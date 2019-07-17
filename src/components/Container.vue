@@ -151,7 +151,7 @@
             :data="widgetForm"
             :value="widgetModels"
             :remote="remoteFuncs"
-            ref="generateForm"
+            ref="runtimeForm"
           >
             <template v-slot:blank="scope">
               宽度：
@@ -213,7 +213,7 @@ import WidgetConfig from "./WidgetConfig";
 import FormConfig from "./FormConfig";
 import WidgetForm from "./DesignSurface";
 import CusDialog from "./CusDialog";
-import GenerateForm from "./GenerateForm";
+import runtimeForm from "./RuntimeForm";
 import Clipboard from "clipboard";
 import {
   basicComponents,
@@ -232,7 +232,7 @@ export default {
     FormConfig,
     WidgetForm,
     CusDialog,
-    GenerateForm
+    runtimeForm
   },
   props: {
     preview: {
@@ -377,7 +377,7 @@ export default {
       this.previewVisible = true;
     },
     handleTest() {
-      this.$refs.generateForm
+      this.$refs.runtimeForm
         .getData()
         .then(data => {
           this.$alert(data, "").catch(e => {});
@@ -388,7 +388,7 @@ export default {
         });
     },
     handleReset() {
-      this.$refs.generateForm.reset();
+      this.$refs.runtimeForm.reset();
     },
     handleGenerateJson() {
       this.jsonVisible = true;
