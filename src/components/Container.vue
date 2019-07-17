@@ -145,7 +145,7 @@
           width="1000px"
           form
         >
-          <generate-form
+          <runtime-form
             insite="true"
             v-if="previewVisible"
             :data="widgetForm"
@@ -158,7 +158,7 @@
               <el-input v-model="scope.model.blank.width" style="width: 100px"></el-input>高度：
               <el-input v-model="scope.model.blank.height" style="width: 100px"></el-input>
             </template>
-          </generate-form>
+          </runtime-form>
 
           <template slot="action">
             <el-button type="primary" @click="handleTest">获取数据</el-button>
@@ -213,7 +213,7 @@ import WidgetConfig from "./WidgetConfig";
 import FormConfig from "./FormConfig";
 import WidgetForm from "./DesignSurface";
 import CusDialog from "./CusDialog";
-import runtimeForm from "./RuntimeForm";
+import runtimeForm from "./runtimeForm";
 import Clipboard from "clipboard";
 import {
   basicComponents,

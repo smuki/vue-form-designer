@@ -28,14 +28,14 @@
                 >
                   <slot :name="citem.model" :model="models"></slot>
                 </el-form-item>
-                <genetate-form-item
+                <runtime-form-item
                   v-else
                   :key="citem.key"
                   :models.sync="models"
                   :remote="remote"
                   :rules="rules"
                   :widget="citem"
-                ></genetate-form-item>
+                ></runtime-form-item>
               </template>
             </el-col>
           </el-row>
@@ -48,13 +48,13 @@
         </template>
 
         <template v-else>
-          <genetate-form-item
+          <runtime-form-item
             :key="item.key"
             :models.sync="models"
             :rules="rules"
             :widget="item"
             :remote="remote"
-          ></genetate-form-item>
+          ></runtime-form-item>
         </template>
       </template>
     </el-form>
@@ -62,13 +62,13 @@
 </template>
 
 <script>
-import GenetateFormItem from "./RuntimeFormItem";
+import runtimeFormItem from "./runtimeFormItem";
 import { loadJs } from "../util/index.js";
 
 export default {
-  name: "fm-generate-form",
+  name: "fm-runtime-form",
   components: {
-    GenetateFormItem
+    runtimeFormItem
   },
   props: ["data", "remote", "value", "insite"],
   data() {

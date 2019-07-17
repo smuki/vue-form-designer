@@ -85,9 +85,9 @@ export default function (data) {
   </head>
   <body>
     <div id="app">
-      <fm-generate-form :data="jsonData" :remote="remoteFuncs" :value="editData" ref="runtimeForm">
+      <fm-runtime-form :data="jsonData" :remote="remoteFuncs" :value="editData" ref="runtimeForm">
         ${blankTemplate}
-      </fm-generate-form>
+      </fm-runtime-form>
       <el-button type="primary" @click="handleSubmit">提交</el-button>
     </div>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
