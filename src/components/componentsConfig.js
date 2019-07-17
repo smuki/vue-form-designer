@@ -313,11 +313,11 @@ export const layoutComponents = [
     columns: [
       {
         span: 12,
-        list: []
+        Components: []
       },
       {
         span: 12,
-        list: []
+        Components: []
       }
     ],
     options: {
