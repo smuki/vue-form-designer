@@ -209,7 +209,7 @@
 
 <script>
 import Draggable from "vuedraggable";
-import WidgetConfig from "./WidgetConfig";
+import WidgetConfig from "./FieldConfig";
 import FormConfig from "./FormConfig";
 import WidgetForm from "./DesignSurface";
 import CusDialog from "./CusDialog";
