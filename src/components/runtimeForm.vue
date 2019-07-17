@@ -19,7 +19,7 @@
             :align="item.options.align"
           >
             <el-col v-for="(col, colIndex) in item.columns" :key="colIndex" :span="col.span">
-              <template v-for="citem in col.list">
+              <template v-for="citem in col.Components">
                 <el-form-item
                   v-if="citem.type=='blank'"
                   :label="citem.name"
@@ -78,21 +78,32 @@ export default {
     };
   },
   created() {
+    console.log(this.data);
     this.generateModle(this.data.Components);
   },
   mounted() {},
   methods: {
     generateModle(genList) {
       for (let i = 0; i < genList.length; i++) {
+        console.log(i);
+        console.log(genList[i].type);
         if (genList[i].type === "grid") {
+          console.log("columns");
+          console.log(genList[i].columns);
           genList[i].columns.forEach(item => {
-            this.generateModle(item.list);
+            console.log("Components");
+
+            console.log(item.Components);
+
+            this.generateModle(item.Components);
           });
         } else {
           if (
             this.value &&
             Object.keys(this.value).indexOf(genList[i].model) >= 0
           ) {
+                      console.log("columns-1111");
+
             this.models[genList[i].model] = this.value[genList[i].model];
           } else {
             if (genList[i].type === "blank") {
@@ -106,6 +117,8 @@ export default {
                   : []
               );
             } else {
+                                    console.log("columns-22222");
+
               this.models[genList[i].model] = genList[i].options.defaultValue;
             }
           }
