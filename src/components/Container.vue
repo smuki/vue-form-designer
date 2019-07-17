@@ -122,14 +122,14 @@
             <el-header height="45px">
               <div
                 class="config-tab"
+                :class="{active: configTab=='form'}"
+                @click="handleConfigSelect('form')"
+              >基本设置</div>
+               <div
+                class="config-tab"
                 :class="{active: configTab=='widget'}"
                 @click="handleConfigSelect('widget')"
               >字段属性</div>
-              <div
-                class="config-tab"
-                :class="{active: configTab=='form'}"
-                @click="handleConfigSelect('form')"
-              >表单属性</div>
             </el-header>
             <el-main class="config-content">
               <widget-config v-show="configTab=='widget'" :data="widgetFormSelect"></widget-config>
