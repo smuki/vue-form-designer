@@ -1,9 +1,15 @@
 function findRemoteFunc(list, funcList, tokenFuncList, blankList) {
+  console.log("list");
   console.log(list);
+  console.log("-----");
+
   for (let i = 0; i < list.length; i++) {
     if (list[i].type == 'grid') {
       list[i].columns.forEach(item => {
-        findRemoteFunc(item.list, funcList, tokenFuncList, blankList)
+
+        console.log("item.list")
+        console.log(item.Components)
+        findRemoteFunc(item.Components, funcList, tokenFuncList, blankList)
       })
     } else {
       if (list[i].type == 'blank') {
