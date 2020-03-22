@@ -129,7 +129,7 @@
                 class="config-tab"
                 :class="{active: configTab=='form'}"
                 @click="handleConfigSelect('form')"
-              >基本设置</div>
+              >表单属性</div>
             </el-header>
             <el-main class="config-content">
               <widget-config v-show="configTab=='widget'" :data="widgetFormSelect"></widget-config>
