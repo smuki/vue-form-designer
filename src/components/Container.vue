@@ -93,14 +93,14 @@
               @click="handlePreview"
             >预览</el-button>
             <el-button
-              v-if="generateJson"
+              v-if="false && generateJson"
               type="text"
               size="medium"
               icon="el-icon-tickets"
               @click="handleGenerateJson"
             >生成JSON</el-button>
             <el-button
-              v-if="generateCode"
+              v-if="false && generateCode"
               type="text"
               size="medium"
               icon="el-icon-document"
