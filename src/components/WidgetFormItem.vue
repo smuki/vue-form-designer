@@ -149,18 +149,6 @@
       ></el-slider>
     </template>
 
-    <template v-if="element.type=='imgupload'">
-      <fm-upload
-        v-model="element.options.defaultValue"
-        :disabled="element.options.disabled"
-        :style="{'width': element.options.width}"
-        :width="element.options.size.width"
-        :height="element.options.size.height"
-        token="xxx"
-        domain="xxx"
-      ></fm-upload>
-    </template>
-
     <template v-if="element.type == 'cascader'">
       <el-cascader
         v-model="element.options.defaultValue"
@@ -190,11 +178,11 @@
 </template>
 
 <script>
-import FmUpload from "./Upload";
+//import FmUpload from "./Upload";
 export default {
   props: ["element", "select", "index", "data"],
   components: {
-    FmUpload
+  //  FmUpload
   },
   data() {
     return {

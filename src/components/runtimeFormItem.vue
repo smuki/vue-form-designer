@@ -163,25 +163,6 @@
       ></el-slider>
     </template>
 
-    <template v-if="widget.type=='imgupload'">
-      <fm-upload
-        v-model="dataModel"
-        :disabled="widget.options.disabled"
-        :style="{'width': widget.options.width}"
-        :width="widget.options.size.width"
-        :height="widget.options.size.height"
-        :token="widget.options.token"
-        :domain="widget.options.domain"
-        :multiple="widget.options.multiple"
-        :length="widget.options.length"
-        :is-qiniu="widget.options.isQiniu"
-        :is-delete="widget.options.isDelete"
-        :min="widget.options.min"
-        :is-edit="widget.options.isEdit"
-        :action="widget.options.action"
-      ></fm-upload>
-    </template>
-
     <template v-if="widget.type == 'cascader'">
       <el-cascader
         v-model="dataModel"
@@ -196,12 +177,12 @@
 </template>
 
 <script>
-import FmUpload from "./Upload";
+//import FmUpload from "./Upload";
 
 export default {
   props: ["widget", "models", "rules", "remote"],
   components: {
-    FmUpload
+ //   FmUpload
   },
   data() {
     return {
