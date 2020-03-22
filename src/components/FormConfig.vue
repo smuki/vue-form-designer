@@ -4,6 +4,9 @@
       <el-form-item label="单据模版名称">
         <el-input v-model="data.name"></el-input>
       </el-form-item>
+      <el-form-item label="描述">
+        <el-input v-model="data.descrpiton"></el-input>
+      </el-form-item>
       <el-form-item label="标签对齐方式">
         <el-radio-group v-model="data.labelPosition">
           <el-radio-button label="left">左对齐</el-radio-button>

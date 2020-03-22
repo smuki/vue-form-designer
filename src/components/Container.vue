@@ -120,16 +120,16 @@
         <el-aside class="widget-config-container">
           <el-container>
             <el-header height="45px">
-              <div
-                class="config-tab"
-                :class="{active: configTab=='form'}"
-                @click="handleConfigSelect('form')"
-              >基本设置</div>
                <div
                 class="config-tab"
                 :class="{active: configTab=='widget'}"
                 @click="handleConfigSelect('widget')"
               >字段属性</div>
+                <div
+                class="config-tab"
+                :class="{active: configTab=='form'}"
+                @click="handleConfigSelect('form')"
+              >基本设置</div>
             </el-header>
             <el-main class="config-content">
               <widget-config v-show="configTab=='widget'" :data="widgetFormSelect"></widget-config>
@@ -225,7 +225,7 @@ import request from "../util/request.js";
 import generateCode from "./generateCode.js";
 
 export default {
-  name: "fm-making-form",
+  name: "fm-form-designer",
   components: {
     Draggable,
     WidgetConfig,

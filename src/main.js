@@ -5,6 +5,11 @@ import ElementUI from 'element-ui'
 
 import 'element-ui/lib/theme-chalk/index.css'
 
+import ViewUI from 'view-design';
+Vue.use(ViewUI);
+
+import 'view-design/dist/styles/iview.css';
+
 // import 'form-making/dist/FormMaking.css'
 // import FormMaking from 'form-making'
 import FormMaking from './index'
