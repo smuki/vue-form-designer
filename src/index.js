@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import 'normalize.css/normalize.css'
 
-import MakingForm from './components/Container.vue'
+import MakingForm from './components/Designer.vue'
 import runtimeForm from './components/runtimeForm.vue'
 
 import './iconfont/iconfont.css'

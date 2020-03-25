@@ -10,8 +10,6 @@ Vue.use(ViewUI);
 
 import 'view-design/dist/styles/iview.css';
 
-// import 'form-making/dist/FormMaking.css'
-// import FormMaking from 'form-making'
 import FormMaking from './index'
 Vue.use(FormMaking)
 
