@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import runtimeFormItem from "./runtimeFormItem";
+import runtimeFormItem from "./runtimeComponent";
 import { loadJs } from "../util/index.js";
 
 export default {

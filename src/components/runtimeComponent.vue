@@ -177,12 +177,11 @@
 </template>
 
 <script>
-//import FmUpload from "./Upload";
 
 export default {
   props: ["widget", "models", "rules", "remote"],
   components: {
- //   FmUpload
+
   },
   data() {
     return {

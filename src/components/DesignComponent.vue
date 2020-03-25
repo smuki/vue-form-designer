@@ -178,11 +178,11 @@
 </template>
 
 <script>
-//import FmUpload from "./Upload";
+
 export default {
   props: ["element", "select", "index", "data"],
   components: {
-  //  FmUpload
+
   },
   data() {
     return {
