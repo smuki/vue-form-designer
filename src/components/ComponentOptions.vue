@@ -429,14 +429,14 @@
 </template>
 
 <script>
-import Draggable from "vuedraggable";
+import Draggable from 'vuedraggable'
 
 export default {
   components: {
     Draggable
   },
-  props: ["data"],
-  data() {
+  props: ['data'],
+  data () {
     return {
       validator: {
         type: null,
@@ -445,25 +445,26 @@ export default {
         range: null,
         length: null
       }
-    };
+    }
   },
   computed: {
-    show() {
+    show () {
       if (this.data && Object.keys(this.data).length > 0) {
-        return true;
+        return true
       }
-      return false;
+      return false
     }
   },
   methods: {
-    handleOptionsRemove(index) {
-      if (this.data.type === "grid") {
-        this.data.columns.splice(index, 1);
+    handleOptionsRemove (index) {
+      if (this.data.type === 'grid') {
+        this.data.columns.splice(index, 1)
       } else {
-        this.data.options.options.splice(index, 1);
+        this.data.options.options.splice(index, 1)
       }
+      
     },
-    handleAddOption() {
+    handleAddOption () {
       if (this.data.options.showLabel) {
         this.data.options.options.push({
           value: "新选项",

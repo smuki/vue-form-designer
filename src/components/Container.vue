@@ -147,6 +147,7 @@
         >
           <runtime-form
             insite="true"
+	    @on-change="handleDataChange"
             v-if="previewVisible"
             :data="widgetForm"
             :value="widgetModels"
@@ -388,26 +389,11 @@ export default {
     handleReset() {
       this.$refs.runtimeForm.reset();
     },
-    handleGenerateJson() {
-      this.jsonVisible = true;
-      this.jsonTemplate = this.widgetForm;
-      console.log("-----------------------------");
-      console.log("-----------------------------");
-      console.log("-----------------------------");
-      console.log("-----------------------------");
-      console.log("-----------------------------");
-      console.log(JSON.stringify(this.widgetForm));
-      console.log("-----------------------------");
-      console.log("-----------------------------");
-      console.log("-----------------------------");
-      console.log("-----------------------------");
-      console.log("-----------------------------");
-      console.log("-----------------------------");
-
+    handleGenerateJson () {
+      this.jsonVisible = true
+      this.jsonTemplate = this.widgetForm
+      console.log(JSON.stringify(this.widgetForm))
       this.$nextTick(() => {
-        //const editor = ace.edit('jsoneditor')
-        //editor.session.setMode("ace/mode/json")
-
         if (!this.jsonClipboard) {
           this.jsonClipboard = new Clipboard(".json-btn");
           this.jsonClipboard.on("success", e => {
@@ -421,8 +407,6 @@ export default {
       this.codeVisible = true;
       this.htmlTemplate = generateCode(JSON.stringify(this.widgetForm));
       this.$nextTick(() => {
-        //const editor = ace.edit('codeeditor')
-        //editor.session.setMode("ace/mode/html")
       });
     },
     handleUpload() {
@@ -467,9 +451,12 @@ export default {
         this.widgetFormSelect = json.list[0];
       }
     },
-    handleInput(val) {
-      console.log(val);
-      this.blank = val;
+    handleInput (val) {
+      console.log(val)
+      this.blank = val
+    },
+    handleDataChange (field, value, data) {
+      console.log(field, value, data)
     }
   },
   watch: {
