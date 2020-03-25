@@ -472,7 +472,6 @@ export default {
 
 <style lang="scss">
 .widget-empty {
-  background: url("../assets/form_empty.png") no-repeat;
   background-position: 50%;
 }
 </style>
