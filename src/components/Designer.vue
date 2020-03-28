@@ -132,7 +132,7 @@
               >表单属性</div>
             </el-header>
             <el-main class="config-content">
-              <widget-config v-show="configTab=='widget'" :data="widgetFormSelect"></widget-config>
+              <ComponentOptions v-show="configTab=='widget'" :data="widgetFormSelect"></ComponentOptions>
               <form-config v-show="configTab=='form'" :data="widgetForm.config"></form-config>
             </el-main>
           </el-container>
