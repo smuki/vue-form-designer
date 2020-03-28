@@ -94,7 +94,7 @@
     </template>
 
     <template v-if="widget.type=='date'">
-      <el-date-picker
+      <DatePicker
         v-model="dataModel"
         :type="widget.options.type"
         :placeholder="widget.options.placeholder"
@@ -107,16 +107,16 @@
         :value-format="widget.options.timestamp ? 'timestamp' : widget.options.format"
         :format="widget.options.format"
         :style="{width: widget.options.width}"
-      ></el-date-picker>
+      ></DatePicker>
     </template>
 
     <template v-if="widget.type =='rate'">
-      <el-rate
+      <Rate
         v-model="dataModel"
         :max="widget.options.max"
         :disabled="widget.options.disabled"
         :allow-half="widget.options.allowHalf"
-      ></el-rate>
+      ></Rate>
     </template>
 
     <template v-if="widget.type == 'color'">
