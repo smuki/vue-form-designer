@@ -74,35 +74,35 @@
             <Button
               v-if="upload && false"
               type="text"
-              size="medium"
+              size="default"
               icon="el-icon-upload2"
               @click="handleUpload"
             >导入JSON</Button>
             <Button
               v-if="clearable"
               type="text"
-              size="medium"
+              size="default"
               icon="el-icon-delete"
               @click="handleClear"
             >清空</Button>
             <Button
               v-if="preview"
               type="text"
-              size="medium"
+              size="default"
               icon="el-icon-view"
               @click="handlePreview"
             >预览</Button>
             <Button
               v-if="false && generateJson"
               type="text"
-              size="medium"
+              size="default"
               icon="el-icon-tickets"
               @click="handleGenerateJson"
             >生成JSON</Button>
             <Button
               v-if="false && generateCode"
               type="text"
-              size="medium"
+              size="default"
               icon="el-icon-document"
               @click="handleGenerateCode"
             >生成代码</Button>
