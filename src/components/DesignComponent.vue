@@ -36,33 +36,33 @@
     </template>
 
     <template v-if="element.type == 'radio'">
-      <el-radio-group
+      <RadioGroup
         v-model="element.options.defaultValue"
         :style="{width: element.options.width}"
         :disabled="element.options.disabled"
       >
-        <el-radio
+        <Radio
+          v-for="(item, index) in element.options.options"
           :style="{display: element.options.inline ? 'inline-block' : 'block'}"
           :label="item.value"
-          v-for="(item, index) in element.options.options"
           :key="item.value + index"
-        >{{element.options.showLabel ? item.label : item.value}}</el-radio>
-      </el-radio-group>
+        >{{element.options.showLabel ? item.label : item.value}}</Radio>
+      </RadioGroup>
     </template>
 
     <template v-if="element.type == 'checkbox'">
-      <el-checkbox-group
+      <CheckboxGroup
         v-model="element.options.defaultValue"
         :style="{width: element.options.width}"
         :disabled="element.options.disabled"
       >
-        <el-checkbox
+        <Checkbox
           :style="{display: element.options.inline ? 'inline-block' : 'block'}"
           :label="item.value"
           v-for="(item, index) in element.options.options"
           :key="item.value + index"
-        >{{element.options.showLabel ? item.label : item.value}}</el-checkbox>
-      </el-checkbox-group>
+        >{{element.options.showLabel ? item.label : item.value}}</Checkbox>
+      </CheckboxGroup>
     </template>
 
     <template v-if="element.type == 'time'">
