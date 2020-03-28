@@ -71,41 +71,41 @@
         <el-container class="center-container" direction="vertical">
           <el-header class="btn-bar" style="height: 45px;">
             <slot name="action"></slot>
-            <el-button
+            <Button
               v-if="upload && false"
               type="text"
               size="medium"
               icon="el-icon-upload2"
               @click="handleUpload"
-            >导入JSON</el-button>
-            <el-button
+            >导入JSON</Button>
+            <Button
               v-if="clearable"
               type="text"
               size="medium"
               icon="el-icon-delete"
               @click="handleClear"
-            >清空</el-button>
-            <el-button
+            >清空</Button>
+            <Button
               v-if="preview"
               type="text"
               size="medium"
               icon="el-icon-view"
               @click="handlePreview"
-            >预览</el-button>
-            <el-button
+            >预览</Button>
+            <Button
               v-if="false && generateJson"
               type="text"
               size="medium"
               icon="el-icon-tickets"
               @click="handleGenerateJson"
-            >生成JSON</el-button>
-            <el-button
+            >生成JSON</Button>
+            <Button
               v-if="false && generateCode"
               type="text"
               size="medium"
               icon="el-icon-document"
               @click="handleGenerateCode"
-            >生成代码</el-button>
+            >生成代码</Button>
           </el-header>
           <el-main :class="{'widget-empty': widgetForm.Components.length == 0}">
             <widget-form
@@ -156,14 +156,14 @@
           >
             <template v-slot:blank="scope">
               宽度：
-              <el-input v-model="scope.model.blank.width" style="width: 100px"></el-input>高度：
-              <el-input v-model="scope.model.blank.height" style="width: 100px"></el-input>
+              <Input v-model="scope.model.blank.width" style="width: 100px"></Input>高度：
+              <Input v-model="scope.model.blank.height" style="width: 100px"></Input>
             </template>
           </runtime-form>
 
           <template slot="action">
-            <el-button type="primary" @click="handleTest">获取数据</el-button>
-            <el-button @click="handleReset">重置</el-button>
+            <Button type="primary" @click="handleTest">获取数据</Button>
+            <Button @click="handleReset">重置</Button>
           </template>
         </cus-dialog>
 
@@ -189,7 +189,7 @@
           <div id="jsoneditor" style="height: 400px;width: 100%;">{{jsonTemplate}}</div>
 
           <template slot="action">
-            <el-button type="primary" class="json-btn" :data-clipboard-text="jsonCopyValue">复制数据</el-button>
+            <Button type="primary" class="json-btn" :data-clipboard-text="jsonCopyValue">复制数据</Button>
           </template>
         </cus-dialog>
 

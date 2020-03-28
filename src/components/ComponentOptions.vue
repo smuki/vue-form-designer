@@ -188,13 +188,13 @@
           v-model="data.options.defaultValue"
         ></Input>
         <Input v-if="data.type=='input'" v-model="data.options.defaultValue"></Input>
-        <el-rate
+        <Rate
           v-if="data.type == 'rate'"
           style="display:inline-block;vertical-align: middle;"
           :max="data.options.max"
           :allow-half="data.options.allowHalf"
           v-model="data.options.defaultValue"
-        ></el-rate>
+        ></Rate>
         <Button
           type="text"
           v-if="data.type == 'rate'"

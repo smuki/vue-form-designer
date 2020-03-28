@@ -41,12 +41,12 @@
     </template>
 
     <template v-if="widget.type == 'radio'">
-      <el-radio-group
+      <RadioGroup
         v-model="dataModel"
         :style="{width: widget.options.width}"
         :disabled="widget.options.disabled"
       >
-        <el-radio
+        <Radio
           :style="{display: widget.options.inline ? 'inline-block' : 'block'}"
           :label="item.value"
           v-for="(item, index) in (widget.options.remote ? widget.options.remoteOptions : widget.options.options)"
@@ -54,17 +54,17 @@
         >
           <template v-if="widget.options.remote">{{item.label}}</template>
           <template v-else>{{widget.options.showLabel ? item.label : item.value}}</template>
-        </el-radio>
-      </el-radio-group>
+        </Radio>
+      </RadioGroup>
     </template>
 
     <template v-if="widget.type == 'checkbox'">
-      <el-checkbox-group
+      <CheckboxGroup
         v-model="dataModel"
         :style="{width: widget.options.width}"
         :disabled="widget.options.disabled"
       >
-        <el-checkbox
+        <Checkbox
           :style="{display: widget.options.inline ? 'inline-block' : 'block'}"
           :label="item.value"
           v-for="(item, index) in (widget.options.remote ? widget.options.remoteOptions : widget.options.options)"
@@ -72,8 +72,8 @@
         >
           <template v-if="widget.options.remote">{{item.label}}</template>
           <template v-else>{{widget.options.showLabel ? item.label : item.value}}</template>
-        </el-checkbox>
-      </el-checkbox-group>
+        </Checkbox>
+      </CheckboxGroup>
     </template>
 
     <template v-if="widget.type == 'time'">
@@ -128,7 +128,7 @@
     </template>
 
     <template v-if="widget.type == 'select'">
-      <el-select
+      <Select
         v-model="dataModel"
         :disabled="widget.options.disabled"
         :multiple="widget.options.multiple"
@@ -137,13 +137,13 @@
         :style="{width: widget.options.width}"
         :filterable="widget.options.filterable"
       >
-        <el-option
+        <Option
           v-for="item in (widget.options.remote ? widget.options.remoteOptions : widget.options.options)"
           :key="item.value"
           :value="item.value"
           :label="widget.options.showLabel || widget.options.remote?item.label:item.value"
-        ></el-option>
-      </el-select>
+        ></Option>
+      </Select>
     </template>
 
     <template v-if="widget.type=='switch'">
