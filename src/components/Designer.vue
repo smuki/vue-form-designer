@@ -56,7 +56,27 @@
                   :select.sync="widgetFormSelect"
                 ></DesignSurface>
               </TabPane>
-              <TabPane label="预览" name="name2"></TabPane>
+              <TabPane label="预览" name="name2">
+                <runtime-form
+                insite="true"
+                @on-change="handleDataChange"
+                :data="widgetForm"
+                :value="widgetModels"
+                :remote="remoteFuncs"
+                ref="runtimeForm"
+                >
+                <template v-slot:blank="scope">
+                宽度：
+                <Input v-model="scope.model.blank.width" style="width: 100px"></Input>高度：
+                <Input v-model="scope.model.blank.height" style="width: 100px"></Input>
+                </template>
+                </runtime-form>
+
+                <template slot="action">
+                <Button type="primary" @click="handleTest">获取数据</Button>
+                <Button @click="handleReset">重置</Button>
+                </template>
+              </TabPane>
             </Tabs>
         </Content>
         <Sider width="300" hide-trigger :style="{background: '#fff',margin: '4px'}">
@@ -122,26 +142,7 @@
             width="1000px"
             form
           >
-            <runtime-form
-              insite="true"
-              @on-change="handleDataChange"
-              v-if="previewVisible"
-              :data="widgetForm"
-              :value="widgetModels"
-              :remote="remoteFuncs"
-              ref="runtimeForm"
-            >
-              <template v-slot:blank="scope">
-                宽度：
-                <Input v-model="scope.model.blank.width" style="width: 100px"></Input>高度：
-                <Input v-model="scope.model.blank.height" style="width: 100px"></Input>
-              </template>
-            </runtime-form>
-
-            <template slot="action">
-              <Button type="primary" @click="handleTest">获取数据</Button>
-              <Button @click="handleReset">重置</Button>
-            </template>
+           
           </cus-dialog>
 
           <cus-dialog
