@@ -25,27 +25,6 @@
               </li>
             </draggable>
 
-            <div class="widget-cate">高级字段</div>
-            <draggable
-              tag="ul"
-              :list="advanceComponents"
-              v-bind="{group:{ name:'people', pull:'clone',put:false},sort:false, ghostClass: 'ghost'}"
-              @end="handleMoveEnd"
-              @start="handleMoveStart"
-              :move="handleMove"
-            >
-              <li
-                class="form-edit-widget-label"
-                v-for="(item, index) in advanceComponents"
-                :key="index"
-              >
-                <a>
-                  <i class="icon iconfont" :class="item.icon"></i>
-                  <span>{{item.name}}</span>
-                </a>
-              </li>
-            </draggable>
-
             <div class="widget-cate">布局字段</div>
             <draggable
               tag="ul"
