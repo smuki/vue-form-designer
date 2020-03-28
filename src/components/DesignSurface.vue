@@ -42,14 +42,14 @@
                   >
                     <transition-group name="fade" tag="div" class="widget-col-list">
                       <template v-for="(el, i) in col.Components">
-                        <widget-form-item
+                        <DesignComponent
                           :key="el.key"
                           v-if="el.key"
                           :element="el"
                           :select.sync="selectWidget"
                           :index="i"
                           :data="col"
-                        ></widget-form-item>
+                        ></DesignComponent>
                       </template>
                     </transition-group>
                   </draggable>
