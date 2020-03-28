@@ -58,19 +58,19 @@
         <Switch v-model="data.options.showLabel"></Switch>
       </FormItem>
       <FormItem label="选项" v-if="Object.keys(data.options).indexOf('options')>=0">
-        <RadioGroup v-model="data.options.remote" size="mini" style="margin-bottom:10px;">
+        <RadioGroup v-model="data.options.remote" size="small" style="margin-bottom:10px;">
           <Radio :label="false">静态数据</Radio>
           <Radio :label="true">远端数据</Radio>
         </RadioGroup>
         <template v-if="data.options.remote">
           <div>
-            <Input size="mini" style v-model="data.options.remoteFunc">
+            <Input size="small" style v-model="data.options.remoteFunc">
               <template slot="prepend">远端方法</template>
             </Input>
-            <Input size="mini" style v-model="data.options.props.value">
+            <Input size="small" style v-model="data.options.props.value">
               <template slot="prepend">值</template>
             </Input>
-            <Input size="mini" style v-model="data.options.props.label">
+            <Input size="small" style v-model="data.options.props.label">
               <template slot="prepend">标签</template>
             </Input>
           </div>
@@ -88,12 +88,12 @@
                   <Radio :label="item.value" style="margin-right: 5px;">
                     <Input
                       :style="{'width': data.options.showLabel? '90px': '180px' }"
-                      size="mini"
+                      size="small"
                       v-model="item.value"
                     ></Input>
                     <Input
                       style="width:90px;"
-                      size="mini"
+                      size="small"
                       v-if="data.options.showLabel"
                       v-model="item.label"
                     ></Input>
@@ -102,15 +102,15 @@
                   <i class="drag-item" style="font-size: 16px;margin: 0 5px;cursor: move;">
                     <i class="iconfont icon-icon_bars"></i>
                   </i>
-                  <el-button
+                  <Button
                     @click="handleOptionsRemove(index)"
                     circle
                     plain
                     type="danger"
-                    size="mini"
+                    size="small"
                     icon="el-icon-minus"
                     style="padding: 4px;margin-left: 5px;"
-                  ></el-button>
+                  ></Button>
                 </li>
               </draggable>
             </RadioGroup>
@@ -128,12 +128,12 @@
                   <Checkbox :label="item.value" style="margin-right: 5px;">
                     <Input
                       :style="{'width': data.options.showLabel? '90px': '180px' }"
-                      size="mini"
+                      size="small"
                       v-model="item.value"
                     ></Input>
                     <Input
                       style="width:90px;"
-                      size="mini"
+                      size="small"
                       v-if="data.options.showLabel"
                       v-model="item.label"
                     ></Input>
@@ -141,37 +141,37 @@
                   <i class="drag-item" style="font-size: 16px;margin: 0 5px;cursor: move;">
                     <i class="iconfont icon-icon_bars"></i>
                   </i>
-                  <el-button
+                  <Button
                     @click="handleOptionsRemove(index)"
                     circle
                     plain
                     type="danger"
-                    size="mini"
+                    size="small"
                     icon="el-icon-minus"
                     style="padding: 4px;margin-left: 5px;"
-                  ></el-button>
+                  ></Button>
                 </li>
               </draggable>
             </CheckboxGroup>
           </template>
           <div style="margin-left: 22px;">
-            <el-button type="text" @click="handleAddOption">添加选项</el-button>
+            <Button type="text" @click="handleAddOption">添加选项</Button>
           </div>
         </template>
       </FormItem>
 
       <FormItem label="远端数据" v-if="data.type=='cascader'">
         <div>
-          <Input size="mini" style v-model="data.options.remoteFunc">
+          <Input size="small" style v-model="data.options.remoteFunc">
             <template slot="prepend">远端方法</template>
           </Input>
-          <Input size="mini" style v-model="data.options.props.value">
+          <Input size="small" style v-model="data.options.props.value">
             <template slot="prepend">值</template>
           </Input>
-          <Input size="mini" style v-model="data.options.props.label">
+          <Input size="small" style v-model="data.options.props.label">
             <template slot="prepend">标签</template>
           </Input>
-          <Input size="mini" style v-model="data.options.props.children">
+          <Input size="small" style v-model="data.options.props.children">
             <template slot="prepend">子选项</template>
           </Input>
         </div>
@@ -195,12 +195,12 @@
           :allow-half="data.options.allowHalf"
           v-model="data.options.defaultValue"
         ></el-rate>
-        <el-button
+        <Button
           type="text"
           v-if="data.type == 'rate'"
           style="display:inline-block;vertical-align: middle;margin-left: 10px;"
           @click="data.options.defaultValue=0"
-        >清空</el-button>
+        >清空</Button>
         <el-color-picker
           v-if="data.type == 'color'"
           v-model="data.options.defaultValue"
@@ -322,25 +322,25 @@
               </i>
               <Input
                 placeholder="栅格值"
-                size="mini"
+                size="small"
                 style="width: 100px;"
                 type="number"
                 v-model.number="item.span"
               ></Input>
 
-              <el-button
+              <Button
                 @click="handleOptionsRemove(index)"
                 circle
                 plain
                 type="danger"
-                size="mini"
+                size="small"
                 icon="el-icon-minus"
                 style="padding: 4px;margin-left: 5px;"
-              ></el-button>
+              ></Button>
             </li>
           </draggable>
           <div style="margin-left: 22px;">
-            <el-button type="text" @click="handleAddColumn">添加列</el-button>
+            <Button type="text" @click="handleAddColumn">添加列</Button>
           </div>
         </FormItem>
         <FormItem label="水平排列方式">
@@ -402,7 +402,7 @@
           <Select
             v-if="Object.keys(data.options).indexOf('dataType')>=0"
             v-model="data.options.dataType"
-            size="mini"
+            size="small"
           >
             <Option value="string" label="字符串"></Option>
             <Option value="number" label="数字"></Option>
@@ -416,7 +416,7 @@
 
           <div v-if="Object.keys(data.options).indexOf('pattern')>=0">
             <Input
-              size="mini"
+              size="small"
               v-model.lazy="data.options.pattern"
               style=" width: 240px;"
               placeholder="填写正则表达式"

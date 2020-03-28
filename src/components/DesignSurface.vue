@@ -1,11 +1,11 @@
 <template>
   <div class="widget-form-container">
     <div v-if="data.Components.length == 0" class="form-empty">从 左 侧 拖 拽 来 添 加 字 段</div>
-    <el-form
+    <Form
       :size="data.config.size"
       label-suffix=":"
       :label-position="data.config.labelPosition"
-      :label-width="data.config.labelWidth + 'px'"
+      :label-width="data.config.labelWidth"
     >
       <draggable
         class
@@ -17,7 +17,7 @@
         <transition-group name="fade" tag="div" class="widget-form-list">
           <template v-for="(element, index) in data.Components">
             <template v-if="element.type == 'grid'">
-              <el-row
+              <Row
                 class="widget-col widget-view"
                 v-if="element && element.key"
                 :key="element.key"
@@ -28,7 +28,7 @@
                 :align="element.options.align"
                 @click.native="handleSelectWidget(index)"
               >
-                <el-col
+                <Col
                   v-for="(col, colIndex) in element.columns"
                   :key="colIndex"
                   :span="col.span ? col.span : 0"
@@ -53,7 +53,7 @@
                       </template>
                     </transition-group>
                   </draggable>
-                </el-col>
+                </Col>
                 <div
                   class="widget-view-action widget-col-action"
                   v-if="selectWidget.key == element.key"
@@ -67,7 +67,7 @@
                 >
                   <i class="iconfont icon-drag drag-widget"></i>
                 </div>
-              </el-row>
+              </Row>
             </template>
             <template v-else>
               <widget-form-item
@@ -82,7 +82,7 @@
           </template>
         </transition-group>
       </draggable>
-    </el-form>
+    </Form>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <el-form-item
+  <FormItem
     class="widget-view"
     v-if="element && element.key"
     :class="{active: selectWidget.key == element.key, 'is_req': element.options.required}"
@@ -7,32 +7,32 @@
     @click.native.stop="handleSelectWidget(index)"
   >
     <template v-if="element.type == 'input'">
-      <el-input
+      <Input
         v-model="element.options.defaultValue"
         :style="{width: element.options.width}"
         :placeholder="element.options.placeholder"
         :disabled="element.options.disabled"
-      ></el-input>
+      ></Input>
     </template>
 
     <template v-if="element.type == 'textarea'">
-      <el-input
+      <Input
         type="textarea"
         :rows="5"
         v-model="element.options.defaultValue"
         :style="{width: element.options.width}"
         :disabled="element.options.disabled"
         :placeholder="element.options.placeholder"
-      ></el-input>
+      ></Input>
     </template>
 
     <template v-if="element.type == 'number'">
-      <el-input-number
+      <Input-number
         v-model="element.options.defaultValue"
         :disabled="element.options.disabled"
         :controls-position="element.options.controlsPosition"
         :style="{width: element.options.width}"
-      ></el-input-number>
+      ></Input-number>
     </template>
 
     <template v-if="element.type == 'radio'">
@@ -174,7 +174,7 @@
     <div class="widget-view-drag" v-if="selectWidget.key == element.key">
       <i class="iconfont icon-drag drag-widget"></i>
     </div>
-  </el-form-item>
+  </FormItem>
 </template>
 
 <script>

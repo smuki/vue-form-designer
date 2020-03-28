@@ -1,43 +1,43 @@
 <template>
-  <el-form-item :label="widget.name" :prop="widget.model">
+  <FormItem :label="widget.name" :prop="widget.model">
     <template v-if="widget.type == 'input'">
-      <el-input
+      <Input
         v-if="widget.options.dataType == 'number' || widget.options.dataType == 'integer' || widget.options.dataType == 'float'"
         :type="widget.options.dataType"
         v-model.number="dataModel"
         :placeholder="widget.options.placeholder"
         :style="{width: widget.options.width}"
         :disabled="widget.options.disabled"
-      ></el-input>
-      <el-input
+      ></Input>
+      <Input
         v-else
         :type="widget.options.dataType"
         v-model="dataModel"
         :disabled="widget.options.disabled"
         :placeholder="widget.options.placeholder"
         :style="{width: widget.options.width}"
-      ></el-input>
+      ></Input>
     </template>
 
     <template v-if="widget.type == 'textarea'">
-      <el-input
+      <Input
         type="textarea"
         :rows="5"
         v-model="dataModel"
         :disabled="widget.options.disabled"
         :placeholder="widget.options.placeholder"
         :style="{width: widget.options.width}"
-      ></el-input>
+      ></Input>
     </template>
 
     <template v-if="widget.type == 'number'">
-      <el-input-number
+      <Input-number
         v-model="dataModel"
         :style="{width: widget.options.width}"
         :step="widget.options.step"
         controls-position="right"
         :disabled="widget.options.disabled"
-      ></el-input-number>
+      ></Input-number>
     </template>
 
     <template v-if="widget.type == 'radio'">
@@ -173,7 +173,7 @@
         :options="widget.options.remoteOptions"
       ></el-cascader>
     </template>
-  </el-form-item>
+  </FormItem>
 </template>
 
 <script>
