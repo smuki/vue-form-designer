@@ -32,16 +32,8 @@
 
 <script>
 
-import { InputNumber, RadioGroup, Radio,Input} from 'view-design';
-
-
 export default {
   props: ["data"],
-  components: {
-    InputNumber,
-    RadioGroup,
-    Radio,
-    Input
-  },
+  
 };
 </script>
