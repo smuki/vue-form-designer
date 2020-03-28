@@ -182,7 +182,6 @@
 export default {
   props: ["element", "select", "index", "data"],
   components: {
-
   },
   data() {
     return {

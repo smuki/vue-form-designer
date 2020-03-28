@@ -70,14 +70,14 @@
               </Row>
             </template>
             <template v-else>
-              <widget-form-item
+              <DesignComponent
                 v-if="element && element.key"
                 :key="element.key"
                 :element="element"
                 :select.sync="selectWidget"
                 :index="index"
                 :data="data"
-              ></widget-form-item>
+              ></DesignComponent>
             </template>
           </template>
         </transition-group>
@@ -88,12 +88,12 @@
 
 <script>
 import Draggable from "vuedraggable";
-import WidgetFormItem from "./DesignComponent";
+import DesignComponent from "./DesignComponent";
 
 export default {
   components: {
     Draggable,
-    WidgetFormItem
+    DesignComponent
   },
   props: ["data", "select"],
   data() {
