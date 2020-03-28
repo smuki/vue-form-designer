@@ -137,7 +137,7 @@
     </template>
 
     <template v-if="element.type=='slider'">
-      <el-slider
+      <Slider
         v-model="element.options.defaultValue"
         :min="element.options.min"
         :max="element.options.max"
@@ -146,7 +146,7 @@
         :show-input="element.options.showInput"
         :range="element.options.range"
         :style="{width: element.options.width}"
-      ></el-slider>
+      ></Slider>
     </template>
 
     <template v-if="element.type == 'cascader'">
