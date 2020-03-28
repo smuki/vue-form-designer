@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <div class="fm-container">
       <router-view />
-    </div>
   </div>
 </template>
 
@@ -63,7 +61,7 @@ export default {
   }
 }
 .fm-container {
-  height: calc(100% - 50px);
+  //height: calc(100% - 50px);
 }
 *,
 :after,

@@ -137,20 +137,19 @@ $primary-background-color: #ecf5ff;
 }
 
 .widget-form-container{
-  position: absolute;
+  //position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 
   
-
   .widget-form-list{
     background: #fff;
     // border: 1px dashed #999;
     border: 1px dashed #999;
     min-height: 600px;
-    margin: 10px;
+    margin: 2px;
 
     .widget-col-list{
       min-height: 50px;
