@@ -7,12 +7,12 @@
     @click.native.stop="handleSelectWidget(index)"
   >
     <template v-if="element.type == 'input'">
-      <I-nput
+      <Input
         v-model="element.options.defaultValue"
         :style="{width: element.options.width}"
         :placeholder="element.options.placeholder"
         :disabled="element.options.disabled"
-      ></I-nput>
+      ></Input>
     </template>
 
     <template v-if="element.type == 'textarea'">

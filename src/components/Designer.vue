@@ -210,7 +210,7 @@
 
 <script>
 import Draggable from "vuedraggable";
-import WidgetConfig from "./ComponentOptions";
+import ComponentOptions from "./ComponentOptions";
 import FormConfig from "./FormConfig";
 import WidgetForm from "./DesignSurface";
 import runtimeForm from "./runtimeForm";
@@ -230,7 +230,7 @@ export default {
   name: "fm-form-designer",
   components: {
     Draggable,
-    WidgetConfig,
+    ComponentOptions,
     FormConfig,
     WidgetForm,
     CusDialog,
