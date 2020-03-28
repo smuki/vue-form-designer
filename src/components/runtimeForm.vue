@@ -28,14 +28,14 @@
                 >
                   <slot :name="citem.model" :model="models"></slot>
                 </FormItem>
-                <runtime-FormItem
+                <runtimeComponent
                   v-else
                   :key="citem.key"
                   :models.sync="models"
                   :remote="remote"
                   :rules="rules"
                   :widget="citem"
-                ></runtime-FormItem>
+                ></runtimeComponent>
               </template>
             </Col>
           </Row>
@@ -48,13 +48,13 @@
         </template>
 
         <template v-else>
-          <runtime-FormItem
+          <runtimeComponent
             :key="item.key"
             :models.sync="models"
             :rules="rules"
             :widget="item"
             :remote="remote"
-          ></runtime-FormItem>
+          ></runtimeComponent>
         </template>
       </template>
     </Form>
@@ -62,13 +62,13 @@
 </template>
 
 <script>
-import runtimeFormItem from "./runtimeComponent";
+import runtimeComponent from "./runtimeComponent";
 import { loadJs } from "../util/index.js";
 
 export default {
   name: "fm-runtime-form",
   components: {
-    runtimeFormItem
+    runtimeComponent
   },
   props: ["data", "remote", "value", "insite"],
   data() {
