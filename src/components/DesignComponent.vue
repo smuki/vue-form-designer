@@ -82,7 +82,7 @@
     </template>
 
     <template v-if="element.type == 'date'">
-      <el-date-picker
+      <DatePicker
         v-model="element.options.defaultValue"
         :type="element.options.type"
         :is-range="element.options.isRange"
@@ -94,16 +94,16 @@
         :editable="element.options.editable"
         :clearable="element.options.clearable"
         :style="{width: element.options.width}"
-      ></el-date-picker>
+      ></DatePicker>
     </template>
 
     <template v-if="element.type == 'rate'">
-      <el-rate
+      <Rate
         v-model="element.options.defaultValue"
         :max="element.options.max"
         :disabled="element.options.disabled"
         :allow-half="element.options.allowHalf"
-      ></el-rate>
+      ></Rate>
     </template>
 
     <template v-if="element.type == 'color'">
@@ -115,7 +115,7 @@
     </template>
 
     <template v-if="element.type == 'select'">
-      <el-select
+      <Select
         v-model="element.options.defaultValue"
         :disabled="element.options.disabled"
         :multiple="element.options.multiple"
@@ -123,17 +123,17 @@
         :placeholder="element.options.placeholder"
         :style="{width: element.options.width}"
       >
-        <el-option
+        <Option
           v-for="item in element.options.options"
           :key="item.value"
           :value="item.value"
           :label="element.options.showLabel?item.label:item.value"
-        ></el-option>
-      </el-select>
+        ></Option>
+      </Select>
     </template>
 
     <template v-if="element.type=='switch'">
-      <el-switch v-model="element.options.defaultValue" :disabled="element.options.disabled"></el-switch>
+      <Switch v-model="element.options.defaultValue" :disabled="element.options.disabled"></Switch>
     </template>
 
     <template v-if="element.type=='slider'">
