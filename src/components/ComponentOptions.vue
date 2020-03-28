@@ -34,13 +34,13 @@
         <Switch v-model="data.options.showInput"></Switch>
       </FormItem>
       <FormItem label="最小值" v-if="Object.keys(data.options).indexOf('min')>=0">
-        <Input-number v-model="data.options.min" :min="0" :max="100" :step="1"></Input-number>
+        <InputNumber v-model="data.options.min" :min="0" :max="100" :step="1"></InputNumber>
       </FormItem>
       <FormItem label="最大值" v-if="Object.keys(data.options).indexOf('max')>=0">
-        <Input-number v-model="data.options.max" :min="0" :max="100" :step="1"></Input-number>
+        <InputNumber v-model="data.options.max" :min="0" :max="100" :step="1"></InputNumber>
       </FormItem>
       <FormItem label="步长" v-if="Object.keys(data.options).indexOf('step')>=0">
-        <Input-number v-model="data.options.step" :min="0" :max="100" :step="1"></Input-number>
+        <InputNumber v-model="data.options.step" :min="0" :max="100" :step="1"></InputNumber>
       </FormItem>
       <FormItem label="是否多选" v-if="data.type=='select' || data.type=='imgupload'">
         <Switch v-model="data.options.multiple" @change="handleSelectMuliple"></Switch>

@@ -7,7 +7,7 @@
       :model="models"
       :rules="rules"
       :label-position="data.config.labelPosition"
-      :label-width="data.config.labelWidth + 'px'"
+      :label-width="data.config.labelWidth"
     >
       <template v-for="item in data.Components">
         <template v-if="item.type == 'grid'">
