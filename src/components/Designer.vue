@@ -1,5 +1,28 @@
 <template>
     <Layout class="layout">
+      <Header>
+          <Button
+                v-if="upload"
+                size="default"
+                icon="el-icon-upload2"
+                @click="handleUpload"
+              >导入JSON</Button>
+              <Button v-if="clearable" size="default" icon="el-icon-delete" @click="handleClear">清空</Button>
+              <Button v-if="preview" size="default" icon="el-icon-view" @click="handlePreview">预览</Button>
+              <Button
+                v-if="generateJson"
+                size="default"
+                icon="el-icon-tickets"
+                @click="handleGenerateJson"
+              >生成JSON</Button>
+              <Button
+                v-if="generateCode"
+                size="default"
+                icon="el-icon-document"
+                @click="handleGenerateCode"
+              >生成代码</Button>
+      </Header>
+      <Layout>
       <Sider hide-trigger :style="{background: '#fff'}">
         <div class="components-list">
           <div class="widget-cate">基础字段</div>
@@ -111,26 +134,7 @@
           <el-container class="center-container" direction="vertical">
             <el-header class="btn-bar" style="height: 45px;">
               <slot name="action"></slot>
-              <Button
-                v-if="upload && false"
-                size="default"
-                icon="el-icon-upload2"
-                @click="handleUpload"
-              >导入JSON</Button>
-              <Button v-if="clearable" size="default" icon="el-icon-delete" @click="handleClear">清空</Button>
-              <Button v-if="preview" size="default" icon="el-icon-view" @click="handlePreview">预览</Button>
-              <Button
-                v-if="false && generateJson"
-                size="default"
-                icon="el-icon-tickets"
-                @click="handleGenerateJson"
-              >生成JSON</Button>
-              <Button
-                v-if="false && generateCode"
-                size="default"
-                icon="el-icon-document"
-                @click="handleGenerateCode"
-              >生成代码</Button>
+            
             </el-header>
             <el-main :class="{'widget-empty': widgetForm.Components.length == 0}"></el-main>
           </el-container>
@@ -184,6 +188,7 @@
         </el-container>
       </el-main>
     </el-container>
+    </Layout>
     </Layout>
   
 </template>
